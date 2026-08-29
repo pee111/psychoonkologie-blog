@@ -7,6 +7,22 @@ Thumbs.db
 .idea/
 *.swp
 
-# Temporäres
+# Temporaeres und Arbeitsdateien
 *.tmp
 *~
+*.bak
+.index.backup.html
+audit*.txt
+audit*.py
+audit*.sh
+log.txt
+fix*.py
+syntaxcheck.js
+arraycheck.js
+
+# Projektunterlagen und Originalmedien gehoeren nicht ins oeffentliche Repository
+START-HIER.md
+UEBERGABE-Projektstand.md
+assets/
+schritt*.sh
+schritt*.txt
