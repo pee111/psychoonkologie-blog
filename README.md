@@ -45,7 +45,7 @@ Für Besucher ohne aktiviertes JavaScript enthält die Seite einen `<noscript>`-
 
 ## Hosting über GitHub Pages
 
-Repository → **Settings** → **Pages** → unter *Source* den Branch `main` und den Ordner `/ (root)` wählen. Nach wenigen Minuten ist die Seite unter `https://pee111.github.io/psychoonkologie-und-glaube/` erreichbar. Eine eigene Domain lässt sich dort ebenfalls hinterlegen.
+Repository → **Settings** → **Pages** → unter *Source* den Branch `main` und den Ordner `/ (root)` wählen. Nach wenigen Minuten ist die Seite unter `https://psyche-und-geist.de/` erreichbar. Eine eigene Domain lässt sich dort ebenfalls hinterlegen.
 
 > Impressum und Datenschutzerklärung wurden nach bestem Wissen erstellt, sind jedoch keine Rechtsberatung. Eine anwaltliche Prüfung wird empfohlen.
 
