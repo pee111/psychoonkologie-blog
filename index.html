@@ -239,6 +239,98 @@
   .crisis .pic{width:52px;height:52px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:1.3rem}
   .crisis p{color:#655741;font-size:.96rem}
   .crisis .tel{font-family:var(--serif);font-size:1.4rem;color:#4a3d26;display:block;margin-top:.4rem}
+  /* ---------- Patient: dunkle, weiche Fassung ---------- */
+  #page-patienten{
+    --pb:#243b31;          /* Grund – dunkel, aber nicht schwarz */
+    --pb2:#2d4a3d;         /* Hero-Verlauf */
+    --pf:rgba(255,255,255,.05);      /* Fläche */
+    --pf2:rgba(255,255,255,.085);    /* Fläche offen / hover */
+    --pkante:inset 0 1px 0 rgba(255,255,255,.07);
+    --pl:rgba(240,236,226,.13);      /* Haarlinie */
+    --pt:#f2efe6;          /* Fließtext */
+    --pt-soft:#bcc9bf;
+    --pg:#ecc78d;          /* Gold */
+    --pglow:rgba(236,199,141,.16);
+  }
+  #page-patienten .patient-hero{background:radial-gradient(120% 90% at 12% 0%,var(--pb2),var(--pb) 62%)}
+  #page-patienten .patient-hero .eyebrow{color:var(--pg)}
+  #page-patienten .patient-hero .eyebrow::before{background:var(--pg)}
+  #page-patienten .patient-hero h1{color:var(--pt)}
+  #page-patienten .patient-hero h1 .hl{color:var(--pg)}
+  #page-patienten .patient-hero p.lead{color:var(--pt-soft)}
+  #page-patienten .patient-section{background:var(--pb)}
+
+  /* Karten ohne Rahmen: weiche Flächen statt Kästchen */
+  #page-patienten .pcard{
+    background:var(--pf);border:0;border-radius:24px;box-shadow:var(--pkante);
+    padding:2.2rem 2rem;transition:background .35s cubic-bezier(.32,.72,0,1),transform .35s cubic-bezier(.32,.72,0,1);
+  }
+  #page-patienten .pcard:hover{background:var(--pf2);transform:translateY(-3px);box-shadow:var(--pkante)}
+  #page-patienten .pcard .pic{
+    width:auto;height:auto;background:none;border-radius:0;font-size:1.7rem;
+    margin-bottom:1rem;justify-items:start;justify-content:start;
+    filter:drop-shadow(0 0 14px var(--pglow));transition:transform .35s cubic-bezier(.32,.72,0,1);
+  }
+  #page-patienten .pcard:hover .pic{transform:translateY(-2px) rotate(-4deg)}
+  #page-patienten .pcard h3{color:var(--pt)}
+  #page-patienten .pcard p,#page-patienten .pcard li{color:var(--pt-soft)}
+  #page-patienten .pcard strong{color:var(--pt);font-weight:500}
+  #page-patienten .crisis{background:var(--pf);border:0;border-radius:24px;box-shadow:var(--pkante),inset 3px 0 0 var(--coral)}
+  #page-patienten .crisis p{color:var(--pt-soft)}
+  #page-patienten .crisis strong{color:var(--pt)}
+  #page-patienten .crisis .tel{color:var(--pg)}
+
+  /* ---------- Anregungen ---------- */
+  .anregungen{margin:3.4rem auto 0;max-width:820px}
+  .akopf{text-align:center;margin-bottom:1.6rem}
+  .akopf h2{font-size:clamp(1.7rem,3vw,2.2rem);font-weight:300;color:var(--pt)}
+  .akopf .sub{font-size:.92rem;color:var(--pt-soft);max-width:44ch;margin:.55rem auto 0}
+  .aitem{border-bottom:1px solid var(--pl);border-radius:18px}
+  .aitem:first-child{border-top:1px solid var(--pl)}
+  .aitem>summary{
+    list-style:none;cursor:pointer;display:grid;grid-template-columns:2px 1fr auto;
+    align-items:center;gap:0 1.4rem;padding:1.6rem 1.2rem;border-radius:18px;
+    transition:background .35s cubic-bezier(.32,.72,0,1);
+  }
+  .aitem>summary::-webkit-details-marker{display:none}
+  .aitem>summary:hover{background:var(--pf)}
+  .aitem>summary:focus-visible{outline:2px solid var(--pg);outline-offset:-3px}
+  .aitem[open]>summary{background:var(--pf2)}
+  .aband{grid-column:1;grid-row:1/span 2;align-self:stretch;background:var(--pg);border-radius:2px;
+    transform:scaleY(0);transform-origin:50% 50%;transition:transform .45s cubic-bezier(.32,.72,0,1)}
+  .aitem[open] .aband{transform:scaleY(1)}
+  .atxt{grid-column:2;display:block}
+  .bereich{display:block;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--pg);line-height:1.3}
+  .atitel{display:block;font-size:1.2rem;color:var(--pt);line-height:1.35;transition:transform .35s cubic-bezier(.32,.72,0,1)}
+  .aitem>summary:hover .atitel{transform:translateX(4px)}
+  .apm{grid-column:3;grid-row:1/span 2;align-self:center;position:relative;width:22px;height:22px;flex:none}
+  .apm i{position:absolute;left:50%;top:50%;width:15px;height:1.5px;background:var(--pg);border-radius:2px;
+    transform:translate(-50%,-50%);transition:transform .4s cubic-bezier(.32,.72,0,1),opacity .3s}
+  .apm i:last-child{transform:translate(-50%,-50%) rotate(90deg)}
+  .aitem[open] .apm i:last-child{transform:translate(-50%,-50%) rotate(0deg);opacity:0}
+  .awrap{overflow:hidden}
+  .atext{padding:.2rem 1.2rem 1.9rem 3.6rem}
+  .atext p,.atext li{font-size:.97rem;color:var(--pt-soft)}
+  .atext p{margin-bottom:.85rem}
+  .atext p:last-child{margin-bottom:0}
+  .atext strong{color:var(--pt);font-weight:500}
+  .atext ul{margin:.2rem 0 .95rem 1.15rem}
+  .atext li{margin-bottom:.45rem}
+  .atext .hinweis{margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--pl)}
+  .atext .hinweis p{font-size:.89rem;color:#9fada2;margin-bottom:0}
+  @media(max-width:600px){
+    .anregungen{margin-top:2.6rem}
+    .aitem>summary{padding:1.3rem .9rem;gap:0 1rem}
+    .atitel{font-size:1.08rem}
+    .atext{padding:.2rem .9rem 1.6rem 2.5rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    #page-patienten .pcard,#page-patienten .pcard .pic,
+    .aitem>summary,.aband,.atitel,.apm i{transition:none}
+    #page-patienten .pcard:hover{transform:none}
+    #page-patienten .pcard:hover .pic{transform:none}
+    .aitem>summary:hover .atitel{transform:none}
+  }
 
   /* ---------- About ---------- */
   .about-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:4rem;align-items:start}
@@ -486,10 +578,11 @@
           <p style="margin-top:.7rem">Solange Sie noch im Krankenhaus sind, ist der einfachste Weg, das Behandlungsteam oder den psychoonkologischen Dienst anzusprechen. Dort wird die weitere Vermittlung gemeinsam mit Ihnen vorbereitet.</p>
         </div>
       </div>
+      <div class="anregungen rv" id="anregungen-box"></div>
       <div class="crisis rv">
         <div class="pic">☎</div>
         <div>
-          <strong style="color:#4a3d26">In akuten Krisen</strong>
+          <strong>In akuten Krisen</strong>
           <p>Wenn Sie sich in einer seelischen Notlage befinden, wenden Sie sich bitte an Ihre behandelnden Ärztinnen und Ärzte oder an den ärztlichen Bereitschaftsdienst unter 116&nbsp;117. Die TelefonSeelsorge ist rund um die Uhr an jedem Tag im Jahr erreichbar – kostenfrei, anonym und konfessionsunabhängig; die Mitarbeitenden unterliegen der Schweigepflicht. Neben dem Telefon gibt es dort auch Mail- und Chatberatung über telefonseelsorge.de.</p>
           <span class="tel">0800 111 0 111 · 0800 111 0 222 · 116 123</span>
           <p style="margin-top:.7rem"><strong>Bei akuter Lebensgefahr wählen Sie bitte den Notruf 112.</strong></p>
@@ -1347,6 +1440,150 @@ document.getElementById('latest-list').innerHTML = latest.map(row).join('');
 document.getElementById('aktuelles-list').innerHTML = posts.filter(p=>p.rubrik==='aktuelles').map(row).join('');
 document.getElementById('praxis-list').innerHTML = posts.filter(p=>p.rubrik==='praxis').map(row).join('');
 document.getElementById('spiritualitaet-list').innerHTML = posts.filter(p=>p.rubrik==='spiritual').map(row).join('');
+
+/* ====== Anregungen für Betroffene ====== */
+/* Wechselnde Impulse. Neue Einträge einfach unten anhängen – Reihenfolge egal:
+   die Liste wird täglich rotiert, der Eintrag des Tages steht oben und ist offen. */
+const anregungen = [
+  {
+    id:'muskelentspannung',
+    bereich:'Körper',
+    titel:'Anspannen, um loszulassen',
+    text:`
+      <p>Die S3-Leitlinie Psychoonkologie empfiehlt Entspannungsverfahren für alle Krebsbetroffenen – ausdrücklich unabhängig davon, wie belastet jemand ist. Am besten untersucht sind progressive Muskelentspannung, autogenes Training und gelenkte Imagination.</p>
+      <p>Das Grundprinzip der progressiven Muskelentspannung lässt sich in wenigen Minuten ausprobieren, im Sitzen oder Liegen:</p>
+      <ul>
+        <li>Ballen Sie beide <strong>Hände</strong> locker zu Fäusten. Halten Sie die Spannung etwa fünf Sekunden – deutlich spürbar, aber ohne Schmerz.</li>
+        <li>Lassen Sie los und lassen Sie die Hände etwa zwanzig Sekunden ruhen. Achten Sie auf den Unterschied zwischen vorher und jetzt.</li>
+        <li>Wiederholen Sie das mit <strong>Schultern</strong> (hochziehen), <strong>Gesicht</strong> (Augen zukneifen) und <strong>Beinen</strong> (Füße anziehen).</li>
+        <li>Zum Schluss zwei, drei Minuten sitzen bleiben und nichts tun.</li>
+      </ul>`,
+    hinweis:`
+      <p>Die Wirksamkeitsnachweise stammen aus angeleiteten Kursen, nicht aus fünf Minuten Selbstversuch – der Effekt kommt über regelmäßiges Üben. Krankenkassen bezuschussen zertifizierte Entspannungskurse in der Regel zweimal im Jahr; die Kurssuche steht auf der Website Ihrer Kasse. Auch Krebsberatungsstellen, Reha-Kliniken und onkologische Kliniken bieten solche Kurse an. Wenn Sie frisch operiert sind oder Schmerzen haben, sprechen Sie kurz mit Ihrem Behandlungsteam, welche Muskelgruppen für Sie geeignet sind.</p>`
+  },
+  {
+    id:'eine-person',
+    bereich:'Kontakt',
+    titel:'Eine Person, der Sie es wirklich sagen',
+    text:`
+      <p>Viele Betroffene berichten, dass sie im Freundes- und Bekanntenkreis irgendwann automatisch „geht schon“ antworten – weil die ehrliche Antwort zu lang wäre, weil man nicht ständig über Krebs reden möchte, weil das Gegenüber sichtbar überfordert ist.</p>
+      <p>Das ist verständlich und im Alltag oft die richtige Entscheidung. Es wird nur dann zum Problem, wenn es die einzige Antwort bleibt, die Sie noch geben.</p>
+      <p>Suchen Sie sich für diese Woche eine einzige Person aus, bei der Sie es nicht tun. Es muss niemand sein, der einen Rat hat oder besonders stark ist. Es reicht jemand, der zuhören kann, ohne sofort etwas reparieren zu wollen.</p>`
+  },
+  {
+    id:'drei-fragen',
+    bereich:'Alltag',
+    titel:'Drei Fragen für den nächsten Termin',
+    text:`
+      <p>Fast alle kennen es: Im Arztgespräch nickt man, hinterher auf dem Parkplatz fällt einem ein, was man eigentlich hatte fragen wollen. Das liegt nicht an mangelnder Konzentration. Anspannung verengt die Aufmerksamkeit – das ist normal und passiert auch sehr souveränen Menschen.</p>
+      <p>Was dagegen hilft, ist unspektakulär:</p>
+      <ul>
+        <li>Schreiben Sie vorher <strong>höchstens drei Fragen</strong> auf. Mehr lässt sich in einem Gespräch selten unterbringen; die wichtigste kommt nach oben.</li>
+        <li>Nehmen Sie, wenn möglich, <strong>jemanden mit</strong>. Zwei Menschen erinnern deutlich mehr als einer.</li>
+        <li>Fragen Sie am Ende: „Können Sie mir das Wichtigste kurz aufschreiben?“ Das ist keine Zumutung, sondern üblich.</li>
+      </ul>
+      <p>Wenn etwas unklar geblieben ist, dürfen Sie nachfragen – auch später, auch telefonisch. Ein Missverständnis auszuräumen kostet weniger Zeit, als wochenlang damit zu leben.</p>`
+  },
+  {
+    id:'die-frage',
+    bereich:'Innehalten',
+    titel:'Was Sie nicht auflösen müssen',
+    text:`
+      <p>„Warum ich.“ „Wozu das alles.“ Solche Fragen tauchen bei vielen irgendwann auf, oft nachts, oft ohne Vorwarnung. Sie sind kein Zeichen dafür, dass etwas mit Ihnen nicht stimmt, und sie sind auch kein Symptom, das behandelt werden müsste.</p>
+      <p>Sie haben nur die unangenehme Eigenschaft, keine Antwort zu haben. Wer sie stellt, bekommt deshalb meist Trost angeboten statt einer Antwort – und schiebt sie dann beiseite.</p>
+      <p>Was manchen hilft: die Frage einmal wirklich auszusprechen oder aufzuschreiben, statt sie wegzuschieben. Sie verschwindet dadurch nicht. Aber sie wird oft leiser, wenn sie einmal gesagt wurde und jemand sie stehen lassen konnte.</p>
+      <p>Wenn Sie gläubig sind, ist das Gebet dafür ein alter und tragfähiger Ort. Wenn nicht, genügt ein Blatt Papier – oder ein Mensch, der es aushält, keine Antwort zu haben.</p>`
+  }
+];
+
+function wenigerBewegung(){
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function aOeffnen(item){
+  const wrap = item.querySelector('.awrap');
+  item.open = true;
+  if(wenigerBewegung()) return;
+  const hoehe = wrap.scrollHeight;
+  wrap.animate(
+    [{height:'0px', opacity:0}, {height:hoehe+'px', opacity:1}],
+    {duration:440, easing:'cubic-bezier(.32,.72,0,1)'}
+  );
+}
+
+function aSchliessen(item){
+  const wrap = item.querySelector('.awrap');
+  if(wenigerBewegung()){ item.open = false; return; }
+  const hoehe = wrap.scrollHeight;
+  item.dataset.laeuft = '1';
+  const lauf = wrap.animate(
+    [{height:hoehe+'px', opacity:1}, {height:'0px', opacity:0}],
+    {duration:340, easing:'cubic-bezier(.32,.72,0,1)'}
+  );
+  lauf.onfinish = () => { item.open = false; delete item.dataset.laeuft; };
+  lauf.oncancel = () => { delete item.dataset.laeuft; };
+}
+
+function anregungenVerdrahten(box){
+  const alle = Array.from(box.querySelectorAll('.aitem'));
+  alle.forEach(item => {
+    item.querySelector('summary').addEventListener('click', ev => {
+      ev.preventDefault();
+      /* Mausklick: Fokusrahmen nicht stehen lassen (ev.detail 0 = Tastatur) */
+      if(ev.detail > 0) ev.currentTarget.blur();
+      if(item.dataset.laeuft) return;
+      if(item.open){
+        aSchliessen(item);
+      } else {
+        alle.forEach(a => { if(a !== item && a.open) aSchliessen(a); });
+        aOeffnen(item);
+      }
+    });
+  });
+}
+
+function renderAnregungen(){
+  const box = document.getElementById('anregungen-box');
+  if(!box || !anregungen.length) return;
+
+  /* Eintrag des Tages: über den Tag stabil, wechselt täglich – ohne Cookies und ohne Storage */
+  const jetzt = new Date();
+  const tagImJahr = Math.floor((jetzt - new Date(jetzt.getFullYear(), 0, 0)) / 86400000);
+  const start = ((tagImJahr % anregungen.length) + anregungen.length) % anregungen.length;
+  const liste = anregungen.slice(start).concat(anregungen.slice(0, start));
+
+  const zahl = ['','Eine','Zwei','Drei','Vier','Fünf','Sechs','Sieben','Acht','Neun','Zehn'];
+  const wieviele = zahl[anregungen.length] || anregungen.length;
+  const sub = anregungen.length === 1
+    ? 'Eine kurze Anregung zum Aufklappen.'
+    : `${wieviele} kurze Anregungen zum Aufklappen. Die oberste wechselt täglich.`;
+
+  box.innerHTML = `
+    <div class="akopf">
+      <h2>Anregungen für zu Hause</h2>
+      <p class="sub">${sub}</p>
+    </div>
+    <div class="aliste">
+      ${liste.map((a, i) => `
+        <details class="aitem"${i === 0 ? ' open' : ''}>
+          <summary>
+            <span class="aband" aria-hidden="true"></span>
+            <span class="atxt">
+              <span class="bereich">${a.bereich}</span>
+              <span class="atitel">${a.titel}</span>
+            </span>
+            <span class="apm" aria-hidden="true"><i></i><i></i></span>
+          </summary>
+          <div class="awrap">
+            <div class="atext">${a.text}${a.hinweis ? `<div class="hinweis">${a.hinweis}</div>` : ''}</div>
+          </div>
+        </details>`).join('')}
+    </div>`;
+
+  anregungenVerdrahten(box);
+}
+
+renderAnregungen();
 
 /* ====== Scroll reveal ====== */
 const io = new IntersectionObserver(entries=>{
